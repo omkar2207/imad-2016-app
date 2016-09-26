@@ -9,19 +9,77 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/Articleone',function(req,res){
-  res.sendFile(path.join(__dirname, 'ui', 'Article-one.html'));
+
+var articles = {
+
+'Article-One' : {
+	title : "Article One| Gopi krishna",
+	heading :" Article One",
+	date : " Sept 15, 2016 ",
+	content : `This is article one`
+},
+
+'Article-Two' : {
+	title : "Article Two| Gopi krishna",
+	heading :" Article Two",
+	date : " Sept 16, 2016 ",
+	content : `This is article two`
+},
+			
+'Article-Three' : {
+	title : "Article Three| Gopi krishna",
+	heading :" Article Three",
+	date : " Sept 17, 2016 ",
+	content : `This is article three`
+}
+};	
+
+
+function articledata(data){
+
+var title = data.title;
+var heading = data.heading;
+var date = data.date;
+var content = data.content;
+
+
+var htmlcontent =	`<html>
+			<head>
+				<title>
+	 			${title}
+				</title>
+			<link href="/ui/style.css" rel="stylesheet" />
+			</head>
+
+			<body>
+
+			<div class= "container">
+
+			  <a href='/'>Home</a>
+  			  <hr>
+			  <h1>${heading} </h1>
+  			  <h2>${date}</h2>	
+  			  <div>
+    				<p>
+    				${content}
+  				</div>
+
+			</div>
+
+			</body>
+
+			</html>`;
+
+return htmlcontent;
+
+}
+
+app.get('/:articlename',function(req,res){
+
+  var articlename =req.params.articlename; 	
+  res.send(articledata(articles[articlename]));
 });
 
-
-app.get('/Articletwo',function(req,res){
-  res.sendFile(path.join(__dirname,'ui','Article-Two.html'));
-});
-
-
-app.get('/Articlethree',function(req,res){
-  res.sendFile(path.join(__dirname,'ui','Article-Three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
