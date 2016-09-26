@@ -10,21 +10,18 @@ app.get('/', function (req, res) {
 });
 
 app.get('/Articleone',function(req,res){
-res.send('Article one requested and will be served');
+  res.sendFile(path.join(__dirname, 'ui', 'Article-One.html'));
 });
+
 
 app.get('/Articletwo',function(req,res){
-res.send('Article two requested and will be served');
+  res.sendFile(path.join(__dirname,'ui','Article-Two.html'));
 });
 
 
-app.get('/Articletheree',function(req,res){
-res.send('Article three requested and will be served');
+app.get('/Articlethree',function(req,res){
+  res.sendFile(path.join(__dirname,'ui','Article-Three.html'));
 });
-
-
-
-
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
