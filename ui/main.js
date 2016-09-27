@@ -10,9 +10,9 @@ var img = document.getElementById("image");
 var right=0;
 function moveRight(){
     right = right +10;
-    img.style.marginLeft = moveRight+"px";
+    img.style.marginLeft = right+"px";
 }
 
-img.onClick = function(){
+img.onclick = function(){
 setInterval(moveRight, 50);
 };
