@@ -16,7 +16,7 @@ var request = new XMLHttpRequest();
 
 // save the request received and span the request
 request.onreadystatechange =function(){
- if (request.readyState === XMLHttpRequest.Done){
+ if (request.readyState === XMLHttpRequest.DONE){
 
   if (request.status === 200){
     var counter = request.responseText;
