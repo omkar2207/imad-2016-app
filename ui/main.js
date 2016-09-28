@@ -55,10 +55,7 @@ var request = new XMLHttpRequest();
 
 
 // make a request
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
-request.open('GET', "http://omkar2207.imad.hasura-app.io/submit-name?name=" + name, true);
-request.send(null);
+
 
 
 // save the request received and span the request
@@ -80,6 +77,10 @@ request.onreadystatechange =function(){
  }
 
 };
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+request.open('GET', "http://omkar2207.imad.hasura-app.io/submit-name?name=" + name, true);
+request.send(null);
 
    
 
