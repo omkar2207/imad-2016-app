@@ -51,6 +51,6 @@ var list ='';
 for (var i=0, i<names.length, i++){
      list += '<li>'+ names[i] + '</li>';
 }
-var ullist = document.getElementById("namelist");
-ullist.innerHTML = list;
+var ul = document.getElementById("namelist");
+ul.innerHTML = list;
 };
