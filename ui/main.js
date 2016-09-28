@@ -44,10 +44,13 @@ span.innerHTML = counter.toString();
 }
 */
 
+var submit = getElementById('submit_btn');
+submit.onclick = function(){
 var names = ['name1','name2','name3','name4'];
 list ='';
 for (var i=0, i<names.length, i++){
      list = '<li>'+ names[i] + '</li>';
 }
-var ulList = getElementById("namelist");
-ulList.innerHTML = list;
+var ullist = getElementById("namelist");
+ullist.innerHTML = list;
+};
