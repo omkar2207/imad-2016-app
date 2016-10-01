@@ -69,6 +69,10 @@ var htmlcontent =	`<html>
     				${content}
     				</p>
   			  </div>
+  			  <hr/>
+  			  <div id='footer'>
+  			  this is footer
+  			  </div>
 
 			</div>
 
