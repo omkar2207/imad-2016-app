@@ -76,7 +76,14 @@ var htmlcontent =	`<html>
   			  <input type ='text' id = 'name' placeholder ='name' ></input>
   			  <input type='submit' value ="Submit" id ="submit_btn"></input>
   			  </div>
-
+              <hr/> 
+              <h2>COMMENTS </h2>
+              <div id='comments'>
+              <ul>
+               <li>test</li>
+              </ul>
+              </div>
+                       
 			</div>
 
 			</body>
