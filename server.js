@@ -73,7 +73,7 @@ var htmlcontent =	`<html>
   			  
   			  <div id='footer'>
   			  <h3>COMMENTS </h3><br/>
-  			  <input type ='text' id = 'name' placeholder ='name' width = 240px ></input>
+  			  <input type ='text' id = 'name' placeholder ='name' size = 70 ></input>
   			  <input type='submit' value ="Submit" id ="submit_btn"></input>
   			  
               <br/> 
