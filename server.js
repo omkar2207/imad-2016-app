@@ -67,7 +67,8 @@ var htmlcontent =	`<html>
   			  <div>
     				<p>
     				${content}
-  				</div>
+    				</p>
+  			  </div>
 
 			</div>
 
