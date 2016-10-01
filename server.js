@@ -103,7 +103,7 @@ app.get('/submit-name', function(req,res){
 });
 
 var names1=[];
-app.get('/Article-One/submit-name',funtion(req,res){
+app.get('/Article-One/submit-name', funtion(req,res){
    var name = req.query.name;
    names1.push(name);
    res.send(JSON.stringify(names1));
