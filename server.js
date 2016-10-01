@@ -72,6 +72,8 @@ var htmlcontent =	`<html>
   			  <hr/>
   			  <div id='footer'>
   			  this is footer
+  			  <input type ='text' id = 'name' placeholder ='name' ></input>
+  			  
   			  </div>
 
 			</div>
