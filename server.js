@@ -72,16 +72,17 @@ var htmlcontent =	`<html>
   			  <hr/>
   			  
   			  <div id='footer'>
-  			  this is footer <br/>
-  			  <input type ='text' id = 'name' placeholder ='name' ></input>
+  			  <h3>COMMENTS </h3><br/>
+  			  <input type ='text' id = 'name' placeholder ='name' width = 240px ></input>
   			  <input type='submit' value ="Submit" id ="submit_btn"></input>
-  			  </div>
-              <hr/> 
-              <h2>COMMENTS </h2>
+  			  
+              <br/> 
+              
               <div id='comments'>
               <ul>
                <li>test</li>
               </ul>
+              </div>
               </div>
                        
 			</div>
