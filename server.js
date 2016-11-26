@@ -130,11 +130,27 @@ app.get('/test-db',function(req,res){
     
 });
 
-app.get('/:articlename',function(req,res){
+app.get('/articles/:articlename',function(req,res){
 
-  var articlename =req.params.articlename; 	
-  res.send(articledata(articles[articlename]));
+pool.query('SELECT * FROM articles WHERE title = $1',[req.params.articlename],function(err,result){
+   if (err){
+       res.status(500).send(err.toString());
+   } else {
+       if(result.rows.length===0){
+           res.status(404).send('Article not found');
+       }else{
+           var articleData = result.rows[0];
+           res.send(articledata(articleData));
+
+       }
+       
+   }
+    
 });
+
+
+
+ });
 
 
 app.get('/ui/style.css', function (req, res) {
