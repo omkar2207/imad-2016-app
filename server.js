@@ -71,16 +71,15 @@ var htmlcontent =	`<html>
 
 			<div class= "container">
 
-			  <a href='/'>Home</a>
-  			  <hr>
+			  
 			  <h1>${heading} </h1>
-  			  <h2>${date}</h2>	
+  			  <h2>${date.toDateString()}</h2>	
   			  <div>
     				<p>
     				${content}
     				</p>
   			  </div>
-  			  <hr/>
+  			  
   			  
   			</body>
 
