@@ -102,6 +102,10 @@ app.get('/submit-name', function(req,res){
     res.send(JSON.stringify(names));
 });
 
+app.get('/test-db',funciton(req,res){
+    
+    
+});
 
 app.get('/:articlename',function(req,res){
 
