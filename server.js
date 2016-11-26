@@ -1,6 +1,15 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var Pool = require('pg').Pool;
+
+var config = {
+  host: 'localhost',
+  //user: 'foo',
+  //password: 'bar',
+  //database: 'my_db',
+};
+
 
 var app = express();
 app.use(morgan('combined'));
@@ -102,7 +111,9 @@ app.get('/submit-name', function(req,res){
     res.send(JSON.stringify(names));
 });
 
-app.get('/test-db',funciton(req,res){
+app.get('/test-db',function(req,res){
+    //make a select request
+    //return a response with the results
     
     
 });
