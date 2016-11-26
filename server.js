@@ -26,29 +26,7 @@ app.get('/counter', function (req, res) {
   res.send(counter.toString());
 });
 
-var articles = {
-
-'Article-One' : {
-	title : "Article One| Gopi krishna",
-	heading :" Article One",
-	date : " Sept 15, 2016 ",
-	content : `This is article one`
-},
-
-'Article-Two' : {
-	title : "Article Two| Gopi krishna",
-	heading :" Article Two",
-	date : " Sept 16, 2016 ",
-	content : `This is article two`
-},
-			
-'Article-Three' : {
-	title : "Article Three| Gopi krishna",
-	heading :" Article Three",
-	date : " Sept 17, 2016 ",
-	content : `This is article three`
-}
-};	
+	
 
 
 function articledata(data){
