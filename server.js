@@ -11,7 +11,7 @@ var config = {
   password: process.env.DB_PASSWORD,
 };
 
-var pool = new Pool(config);
+
 
 var app = express();
 app.use(morgan('combined'));
@@ -113,6 +113,7 @@ app.get('/submit-name', function(req,res){
     res.send(JSON.stringify(names));
 });
 
+var pool = new Pool(config);
 app.get('/test-db',function(req,res){
     //make a select request
     //return a response with the results
@@ -121,7 +122,7 @@ app.get('/test-db',function(req,res){
        if (err) {
            res.status(500).send(err.toString());
        }else{
-            res.send(JSON.tostringify(result));   
+            res.send(JSON.stringify(result));   
             
        }
     });
