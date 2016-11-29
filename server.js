@@ -165,7 +165,7 @@ app.post('/login',function(req,res){
                    
                    //set the session
                    req.session.auth = {userId: result.rows[0].id};
-                   console.log(userId);
+                   //console.log(userId);
                    
                    res.send('Credentials Valid');
                   
