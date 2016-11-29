@@ -94,6 +94,7 @@ app.get('/test-db',function(req,res){
 app.get('/articles/:articlename',function(req,res){
 
 pool.query('SELECT * FROM articles WHERE title = $1',[req.params.articlename],function(err,result){
+   
    if (err){
        res.status(500).send(err.toString());
    } else {
@@ -120,7 +121,21 @@ app.get('/hash/:input',function(req,res){
     res.send(hashedString);
 });
 
-
+app.get('/create-user',function(req,res){
+    
+   var salt = crypto.RandomBytes(128).toString('hex');
+   var dbString = hash(password,salt);
+   pool.query('INSERT into "user" (username,password) VALUES ($1,$2)',[username,dbString],function(err,result){
+       if (err) {
+           res.status(500).send(err.toString());
+       }else{
+            res.send('user suceesfully created');   
+            
+       }
+       
+   });
+    
+});
 
 
 
