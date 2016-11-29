@@ -180,7 +180,7 @@ app.post('/login',function(req,res){
     
 });
 
-app.get('check-login',function (req,res){
+app.get('/check-login',function (req,res){
    
    if (req.session && req.session.auth && req.session.auth.userId){
        res.send('you are logged in: ' + req.seesion.auth.userId.toString());
@@ -189,7 +189,7 @@ app.get('check-login',function (req,res){
    }
 }) ;  
 
-app.ger('logout', function(req,res){
+app.ger('/logout', function(req,res){
    delete req.session.auth;
    res.send('you are logged out');
     
