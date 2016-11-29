@@ -1,51 +1,3 @@
-//counter for the endpoint
-
-var button = document.getElementById("counter");
-
-button.onclick = function(){
-
-
-// create a request
-
-var request = new XMLHttpRequest();
-
-
-// make a request
-
-
-
-// save the request received and span the request
-request.onreadystatechange =function(){
- if (request.readyState === XMLHttpRequest.DONE){
-
-  if (request.status === 200){
-    var counter = request.responseText;
-    var span = document.getElementById("count");
-    span.innerHTML = counter.toString();
-   
-  }
-
- }
-
-};
-request.open('GET', "http://omkar2207.imad.hasura-app.io/counter", true);
-request.send(null);
-};
-
-
-
-/*var counter =0;
-
-var button = document.getElementById("counter");
-button.onclick = function(){
-var span = document.getElementById("count");
-counter =counter+1;
-span.innerHTML = counter.toString();
-}
-*/
-
-
-
 
 var submit = document.getElementById('submit_btn');
 
@@ -60,28 +12,29 @@ var request = new XMLHttpRequest();
 
 // save the request received and span the request
 request.onreadystatechange =function(){
- if (request.readyState === XMLHttpRequest.DONE){
+    if (request.readyState === XMLHttpRequest.DONE){
 
-  if (request.status === 200){
-    var names = request.responseText;
-    names = JSON.parse(names);
-    var list ='';
-    for (var i=0; i<names.length; i++){
-     list += '<li>'+ names[i] + '</li>';
+         if (request.status === 200){
+            console.log('user logged in');
+            alert('logged in sucessfully');
+            
+         } else if(request.status===403){
+             console.log('username / password invalid');
+            alert('username/ password invalie');
+         } else if(request.status===500){
+             console.log('something went wrong on the server');
+            alert('something went wrong on the server');
+         }
+
     }
-    var ul = document.getElementById("namelist");
-    ul.innerHTML = list;
-   
-  }
-
- }
-
 };
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
-request.open('GET', "http://omkar2207.imad.hasura-app.io/submit-name?name=" + name, true);
-request.send(null);
 
+
+var username = document.getElementById('username').value;
+var password = document.getElementById('password').value;
+request.open('POST', "http://omkar2207.imad.hasura-app.io/login", true);
+request.send(JSON.stringify({username: username, password: password}));
+console.log(username);
+console.log(password);
    
-
 };
