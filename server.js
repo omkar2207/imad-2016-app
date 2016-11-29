@@ -121,11 +121,11 @@ app.get('/hash/:input',function(req,res){
     res.send(hashedString);
 });
 
-app.get('/create-user',function(req,res){
+app.get('/create-user/:username/:password',function(req,res){
     
    var salt = crypto.RandomBytes(128).toString('hex');
-   var dbString = hash(password,salt);
-   pool.query('INSERT into "user" (username,password) VALUES ($1,$2)',[username,dbString],function(err,result){
+   var dbString = hash(req.params.password,salt);
+   pool.query('INSERT into "user" (username,password) VALUES ($1,$2)',[req.params.username,dbString],function(err,result){
        if (err) {
            res.status(500).send(err.toString());
        }else{
