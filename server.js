@@ -18,6 +18,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -129,7 +130,7 @@ app.post('/create-user',function(req,res){
    
    var salt = crypto.randomBytes(128).toString('hex');
    var dbString = hash(password,salt);
-   pool.query('INSERT into "user" (username,password) VALUES ($1,$2)',[username,dbString],function(err,result){
+   pool.query('INSERT into "user" (username,password) VALUES ($1,$2)',[username,dbString], function(err,result){
        if (err) {
            res.status(500).send(err.toString());
        }else{
